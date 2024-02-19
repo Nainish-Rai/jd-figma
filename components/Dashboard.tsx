@@ -21,7 +21,7 @@ function Dashboard({}: Props) {
             <ResizablePanel defaultSize={24} minSize={16} maxSize={40}>
               <TodayTasks />
             </ResizablePanel>
-            <ResizableHandle className="w-2 bg-[#17171A] h-full" />
+            <ResizableHandle className="w-2 bg-[#17171A] h-full cursor-pointer" />
 
             <ResizablePanel>
               <div className="w-full h-full flex gap-2">

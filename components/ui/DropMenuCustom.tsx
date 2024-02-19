@@ -62,27 +62,16 @@ export function DropMenuCustom() {
           <ChevronDown className="ml-1 h-3 w-3 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0">
-        <Command>
-          <CommandInput placeholder="Search framework..." />
-          <CommandEmpty>No framework found.</CommandEmpty>
-          <CommandGroup>
-            {frameworks.map((framework) => (
-              <CommandItem
-                key={framework.value}
-                value={framework.value}
-                className="flex gap-2"
-                onSelect={(currentValue) => {
-                  setValue(currentValue === value ? "" : currentValue);
-                  setOpen(false);
-                }}
-              >
-                <Checkbox />
-                {framework.label}
-              </CommandItem>
-            ))}
-          </CommandGroup>
-        </Command>
+      <PopoverContent className="w-[120px] flex  bg-[#17171A] flex-col p-2 ml-14">
+        {frameworks.map((framework) => (
+          <div
+            key={framework.value}
+            className="flex items-center text-xs hover:bg-neutral-800 hover:cursor-pointer py-1 pl-2 rounded px-1 hover:gap-3 gap-2 transition-all duration-200"
+          >
+            <Checkbox className="text-black w-3 h-3 flex items-center justify-center text-sm transition-all  duration-250 bg-white" />
+            <div className=" text-white/60">{framework.label}</div>
+          </div>
+        ))}
       </PopoverContent>
     </Popover>
   );
